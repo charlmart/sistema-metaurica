@@ -10,8 +10,9 @@ Universidad Tecmilenio
 
 ## Integrantes del Equipo
 * Carla Yuliana Martinez Quiroz
-* Silvana Hernández Montalvo
 * Paul Ramses Rubio Alanis
+* Silvana Hernández Montalvo
+
 
 ---
 
