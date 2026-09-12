@@ -13,7 +13,6 @@ Universidad Tecmilenio
 * Paul Ramses Rubio Alanis
 * Silvana Hernández Montalvo
 
-
 ---
 
 ## Descripcion General
@@ -32,6 +31,18 @@ Software desarrollado para la empresa Metaurica S.A. de C.V., enfocado en automa
 * Registra los datos del cliente y el monto total facturado.
 * Calcula de forma automatizada la comision correspondiente para el agente de ventas y el rendimiento neto de la empresa.
 * Administra el estatus de cobro de las transacciones financieras (Pagado / Pendiente).
+
+---
+
+## Requisitos de Ejecucion
+* Contar con Python instalado en el equipo.
+
+## Instrucciones de Uso
+1. Descarga o clona el repositorio.
+2. Asegurate de tener el archivo `main.py` en la misma carpeta.
+3. Ejecuta el programa en tu terminal con el comando:
+   ```bash
+   python main.py
 
 ---
 
