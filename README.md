@@ -1,6 +1,8 @@
 =============================================================
+
 M  E  T  A  U  R  I  C  A
 SISTEMA DE CONTROL DE CALIDAD Y GESTION FINANCIERA
+
 =============================================================
 
 # Proyecto Integrador - Fundamentos de Programacion
