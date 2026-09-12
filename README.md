@@ -5,7 +5,7 @@ SISTEMA DE CONTROL DE CALIDAD Y GESTION FINANCIERA
 
 =============================================================
 
-# Proyecto Integrador - Fundamentos de Programacion
+# Proyecto Integrador - Fundamentos de Programación
 Universidad Tecmilenio
 
 ## Integrantes del Equipo
