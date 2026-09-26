@@ -81,17 +81,17 @@ st.sidebar.success(saludo_formateado)
 # NAVEGACIÓN PRINCIPAL POR PESTAÑAS (MÓDULOS DEL SISTEMA)
 # ------------------------------------------------------------------------------
 tab1, tab2, tab3, tab4 = st.tabs([
-    "📐 Módulo Técnico (ISO 2768)",
-    "💰 Módulo Financiero B2B",
-    "📁 Gestión de Archivos (.txt)",
-    "📊 Resumen Ejecutivo Estadístico"
+    " Módulo Técnico (ISO 2768)",
+    " Módulo Financiero B2B",
+    " Gestión de Archivos (.txt)",
+    " Resumen Ejecutivo Estadístico"
 ])
 
 # ==============================================================================
 # PESTAÑA 1: MÓDULO TÉCNICO DE CALIDAD DIMENSIONAL (ISO 2768 / ASTM)
 # ==============================================================================
 with tab1:
-    st.header("📐 Inspección Dimensional bajo Norma ISO 2768 Clase Fina")
+    st.header(" Inspección Dimensional bajo Norma ISO 2768 Clase Fina")
     st.markdown("""
     Este módulo valida las cotas físicas de planos mecánicos. La norma **ISO 2768** exige un límite estricto de **±0.05 mm** respecto a la tolerancia permitida.
     """)
@@ -147,7 +147,7 @@ with tab1:
 # PESTAÑA 2: MÓDULO ADMINISTRATIVO Y FINANCIERO B2B
 # ==============================================================================
 with tab2:
-    st.header("💰 Calculadora de Comisiones y Rendimiento Financiero B2B")
+    st.header(" Calculadora de Comisiones y Rendimiento Financiero B2B")
     st.markdown("""
     Calcula de forma exacta la comisión neta asignada al proyectista externo (15% por regla de negocio) y el rendimiento neto operativo conservado por Metaurica S.A. de C.V.
     """)
@@ -160,7 +160,7 @@ with tab2:
         porcentaje_comision = st.number_input("Porcentaje de Comisión del Agente (%):", min_value=0.0, max_value=100.0, value=15.0, step=1.0)
         estado_cobro = st.selectbox("Estatus de Cobranza de la Factura:", ["PAGADO", "PENDIENTE DE PAGO"])
 
-    if st.button("💰 Calcular Comisión Financiera B2B"):
+    if st.button(" Calcular Comisión Financiera B2B"):
         try:
             # Procesamiento de cálculos comerciales (Proceso 4 y Proceso 5)
             monto_comision = (monto_total * porcentaje_comision) / 100.0
@@ -178,9 +178,9 @@ with tab2:
                 st.metric("Rendimiento Neto Empresa", f"${rendimiento_neto:,.2f} MXN")
                 
             if estado_cobro == "PAGADO":
-                st.success(f"✅ La factura de **{nombre_cliente}** está marcada como **PAGADA**. Se autoriza la liberación de la comisión de ${monto_comision:,.2f} MXN.")
+                st.success(f" La factura de **{nombre_cliente}** está marcada como **PAGADA**. Se autoriza la liberación de la comisión de ${monto_comision:,.2f} MXN.")
             else:
-                st.warning(f"⏳ La factura de **{nombre_cliente}** está **PENDIENTE DE PAGO**. La comisión se liberará tras saldar la cuenta.")
+                st.warning(f" La factura de **{nombre_cliente}** está **PENDIENTE DE PAGO**. La comisión se liberará tras saldar la cuenta.")
                 
         except Exception as e:
             st.error(f"Error al procesar la transacción financiera: {e}")
@@ -189,7 +189,7 @@ with tab2:
 # PESTAÑA 3: GESTIÓN DE ARCHIVOS DE TEXTO PLANO (.TXT) VÍA DICCIONARIO
 # ==============================================================================
 with tab3:
-    st.header("📁 Gestor de Archivos y Documentación Persistente")
+    st.header(" Gestor de Archivos y Documentación Persistente")
     st.markdown("""
     Administra el catálogo de documentos institucionales almacenados en un **diccionario**. Permite leer, anexar notas en modo *append* (`'a'`) y registrar nuevos archivos `.txt`.
     """)
@@ -202,7 +202,7 @@ with tab3:
     dict_archivos = st.session_state["diccionario_archivos"]
     
     if opcion_gestion.startswith("1"):
-        st.subheader("📖 Lectura de Documentos")
+        st.subheader(" Lectura de Documentos")
         opciones_lista = [f"ID {k}: {v[0]} ({v[1]})" for k, v in dict_archivos.items()]
         archivo_sel = st.selectbox("Seleccione el archivo que desea consultar:", opciones_lista)
         
@@ -215,7 +215,7 @@ with tab3:
             st.text_area("Contenido Actual del Archivo:", value=contenido, height=200)
 
     elif opcion_gestion.startswith("2"):
-        st.subheader("✍️ Anexar Nota Técnica en Modo Append ('a')")
+        st.subheader(" Anexar Nota Técnica en Modo Append ('a')")
         opciones_lista = [f"ID {k}: {v[0]} ({v[1]})" for k, v in dict_archivos.items()]
         archivo_sel = st.selectbox("Seleccione el archivo a actualizar:", opciones_lista)
         nota_anexa = st.text_input("Ingrese la nota o actualización técnica a incluir:")
@@ -229,7 +229,7 @@ with tab3:
                 linea_anexa = f"\n[ACTUALIZACIÓN {tupla_fecha[0]}/{tupla_fecha[1]}/{tupla_fecha[2]} BY {nickname.upper()}]: {nota_anexa}"
                 st.session_state["contenido_archivos"][nombre_archivo] += linea_anexa
                 
-                st.success(f"✅ ¡Nota agregada exitosamente al archivo `{nombre_archivo}`!")
+                st.success(f" ¡Nota agregada exitosamente al archivo `{nombre_archivo}`!")
                 st.text_area("Contenido Actualizado:", value=st.session_state["contenido_archivos"][nombre_archivo], height=200)
             else:
                 st.warning("Escriba un texto válido antes de guardar.")
@@ -240,13 +240,13 @@ with tab3:
         nueva_desc = st.text_input("Descripción del Documento:", value="Reporte Especial de Control de Calidad")
         nuevo_contenido = st.text_area("Contenido Inicial del Documento:", value="ENCABEZADO DE DOCUMENTO METAURICA S.A. DE C.V.\nFecha de Alta: " + str(tupla_fecha))
         
-        if st.button("💾 Crear y Registrar Documento"):
+        if st.button(" Crear y Registrar Documento"):
             if nuevo_nombre.strip() != "":
                 nueva_clave = max(dict_archivos.keys()) + 1
                 dict_archivos[nueva_clave] = (nuevo_nombre, nueva_desc)
                 st.session_state["contenido_archivos"][nuevo_nombre] = nuevo_contenido
                 
-                st.success(f"✅ ¡Archivo `{nuevo_nombre}` registrado en el Diccionario con la Clave ID {nueva_clave}!")
+                st.success(f" ¡Archivo `{nuevo_nombre}` registrado en el Diccionario con la Clave ID {nueva_clave}!")
 
 # ==============================================================================
 # PESTAÑA 4: RESUMEN EJECUTIVO ESTADÍSTICO
