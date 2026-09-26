@@ -1,0 +1,6 @@
+DOCUMENTO TÉCNICO: Plano Flecha Cilíndrica de Transmisión Principal
+Cota Nominal: 50.00 mm | Tolerancia: ISO 2768 Fina (±0.05 mm)
+Material: Acero ASTM A36
+Estatus: Aprobado para Manufactura
+Fecha de Registro: (21, 9, 2026)
+Responsable: Equipo 3 Metaurica S.A. de C.V.
